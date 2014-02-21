@@ -1,35 +1,24 @@
-# NLogToSignalR
-**NLogToSignalR** is a NLog target for delivering NLog notification via SignalR framework in form of notification. It supports both PersistentConnection and Hub to deliver notification. 
+# SignalRConnector
+**SignalRConnector** is an abstraction which act as a base module for Log4NetToSignalR and NLogToSignalR targets/appenders 
 
 ## Current Version
 Alpha.
 
 
 ## Code
-Code can be found at https://github.com/Hdesai/NLogToSignalR
+Code can be found at https://github.com/Hdesai/SignalRConnector
 
 ## Quick start
 
 ###4 Easy Steps
 
 
-1. Put NLog.Targets.SignalR in the same folder as your App.Config/ Web.Config file.
+1. When you want to author a new plugin to any logging framework, reference SignalRConnector
 
-2. Change NLog Configuration.
-  e.g. <targets>
-          <target name="a1" type="NLogToSignalR"
-                  uri="http://localhost/SignalRAspNetServer"
-                  HubName="messenger"
-                  GroupName="sourcing"
-                  CallViaPersistentConnection="false"
-		  MethodToCall="broadCastMessage"
-                  layout="$(message)$(exception:tostring}"/>        
-       </targets>
+2. Implement your plugin (e.g. NLog/Log4Net/Other)
+  
 
-3. Deploy the Server (NLog.Targets.SignalR.AspNetServer) on local IIS.
-
-4. Browse the website after deployment and start logging!
-        
+3. Celebrate!!!
 
 ## Authors
 
@@ -39,7 +28,7 @@ Code can be found at https://github.com/Hdesai/NLogToSignalR
 
 ## Credits
 Special thanks to three open source projects.
-NLog,SignalR and toastr
+Microsoft SignalR Project
 
 
 ## Copyright
@@ -48,4 +37,4 @@ Copyright © 2012 [Himanshu Desai](http://twitter.com/h_desai)
 
 ## License 
 
-NLogToSignalR is under MIT license - http://www.opensource.org/licenses/mit-license.php
+SignalRConnector is under MIT license - http://www.opensource.org/licenses/mit-license.php
